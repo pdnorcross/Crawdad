@@ -1,0 +1,85 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_4: MyString
+  USDA_expdate: 2015-12-07
+  fname: MyString
+  lname: MyString
+  MI: MyString
+  date: 2015-12-07
+  address: MyString
+  race: MyString
+  city: MyString
+  sex: MyString
+  county: MyString
+  employer: MyString
+  state: MyString
+  zip: MyString
+  phone_num: MyString
+  DOB: 2015-12-07
+  occupation: MyString
+  age: 1
+  last_grade: MyString
+  salary: 1.5
+  salary_spouse: 1.5
+  salary_house: 1.5
+  child_support: 1.5
+  food_stamps: MyString
+  WIC: 1.5
+  unemployment: 1.5
+  social: 
+  ssi: 1.5
+  SSI_note: MyString
+  other_inc: MyString
+  other_note: MyString
+  total_inc: 1.5
+  rent_mortgage: 1.5
+  electricity: 1.5
+  gas: 1.5
+  water: 1.5
+  medicine: 1.5
+  med_supplies: 1.5
+  other_exp: 1.5
+  total_exp: 1.5
+
+two:
+  last_4: MyString
+  USDA_expdate: 2015-12-07
+  fname: MyString
+  lname: MyString
+  MI: MyString
+  date: 2015-12-07
+  address: MyString
+  race: MyString
+  city: MyString
+  sex: MyString
+  county: MyString
+  employer: MyString
+  state: MyString
+  zip: MyString
+  phone_num: MyString
+  DOB: 2015-12-07
+  occupation: MyString
+  age: 1
+  last_grade: MyString
+  salary: 1.5
+  salary_spouse: 1.5
+  salary_house: 1.5
+  child_support: 1.5
+  food_stamps: MyString
+  WIC: 1.5
+  unemployment: 1.5
+  social: 
+  ssi: 1.5
+  SSI_note: MyString
+  other_inc: MyString
+  other_note: MyString
+  total_inc: 1.5
+  rent_mortgage: 1.5
+  electricity: 1.5
+  gas: 1.5
+  water: 1.5
+  medicine: 1.5
+  med_supplies: 1.5
+  other_exp: 1.5
+  total_exp: 1.5

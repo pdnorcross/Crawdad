@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  last_4: 1
+  ifname: MyString
+  ilname: MyString
+  terms: MyString
+  notes: MyString
+
+two:
+  last_4: 1
+  ifname: MyString
+  ilname: MyString
+  terms: MyString
+  notes: MyString

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: 1
+  last_4: 1
+  fname: MyString
+  lname: MyString
+  food_stamp: MyString
+  fs_date: 2015-12-07
+  DOB: 2015-12-07
+  age: 1
+  relationship: MyString
+
+two:
+  customer: 1
+  last_4: 1
+  fname: MyString
+  lname: MyString
+  food_stamp: MyString
+  fs_date: 2015-12-07
+  DOB: 2015-12-07
+  age: 1
+  relationship: MyString
