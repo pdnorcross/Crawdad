@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-   root 'home#application'
+   root 'home#index'
+  resources :home
   resources :customers
-end
+  end

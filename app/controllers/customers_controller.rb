@@ -21,6 +21,10 @@ class CustomersController < ActionController::Base
     redirect_to @customer
   end
 
+  def search
+    @customers = Customer.search(params[:search])
+  end
+
   private
   def customer_params
     params.require(:customer).permit!
