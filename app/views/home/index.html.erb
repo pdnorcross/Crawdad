@@ -9,8 +9,8 @@
   <title>Helping Hand of Greater Little Rock</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
   <link rel="stylesheet" href="../assets/bootstrap.min.css">
   <style>
       body {
@@ -18,29 +18,12 @@
           padding-bottom: 20px;
       }
   </style>
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap-theme.min.css">
   <!-- Custom styles for this template -->
 
-  <link rel="stylesheet" href="../assets/normalize.css">
-  <link rel="stylesheet" href="../assets/jquery.steps.css">
-  <link rel="stylesheet" href="../assets/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="../assets/modernizr-2.6.2.min.js"></script>
-  <script src="../assets/jquery.cookie-1.3.1.js"></script>
-  <script src="../assets/jquery.steps.js"></script>
-  <script>
-      $(function ()
-      {
-          $("#wizard").steps({
-              headerTag: "h2",
-              bodyTag: "section",
-              transitionEffect: "slideLeft",
-              stepsOrientation: "vertical"
-          });
-      });
-  </script>
-  <script src="../assets/clone-form-td.js"></script>
-
+  <link href="../assets/carousel.css" rel="stylesheet">
+  <link href="../assets/main.css" rel="stylesheet">
+  <script src="../assets/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -65,8 +48,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/home/#">Home</a></li>
-            <li class="active"><a href="/customers/#">Search Existing Clients</a></li>
+            <li class="active"><a href="/home/#">Home</a></li>
+            <li><a href="/customers/#">Search Existing Clients</a></li>
             <li><a href="/customers/new">New Clients</a></li>
             <li><a href="volunteer.html">Volunteer Clocking</a><li>
             <li><a href="/reports/#">Monthly Reports</a><li>
@@ -83,71 +66,49 @@
   </div>
 </div>
 
-
-
 <!-- Marketing messaging and featurettes
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div class="container marketing">
-
+<div id="fix" class="container marketing">
   <div class="page-header">
-    <h1>Search Existing Client</h1>
+    <h1>Helping Hand of Greater Little Rock</h1>
   </div>
-
+  <!-- Three columns of text below the carousel -->
   <div class="row">
-    <h2>Search By Last 4 Digits of Driver's License Number</h2>
-    <div id="custom-search-input">
-      <div class="input-group col-md-12">
-        <input type="text" class="  search-query form-control" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button">
-                                      <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-      </div>
-    </div>
-  </div>
-  <div class="page-header">
-    <h1><small>-or-</small></h1>
-  </div>
-  <div class="row">
-    <h2>Search By First and Last Name</h2>
-    <div id="custom-search-input">
-      <div class="input-group col-md-12">
-        <input type="text" class="  search-query form-control" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button">
-                                      <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-      </div>
-    </div>
-  </div>
+    <div class="col-lg-4">
+      <img class="img-circle" src="../assets/demo.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Search Existing Clients</h2>
+      <p><a class="btn btn-primary" href="/customers/#" role="button">Search Here</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="img-circle" src="../assets/demo.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>New Clients</h2>
+      <p><a class="btn btn-primary" href="/customers/new" role="button">Register New</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="img-circle" src="../assets/demo.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Volunteer Clocking</h2>
+      <p><a class="btn btn-primary" href="volunteer.html" role="b`utton">Clock In/Out Here</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
 
 
-
-  <!--footer-->
+  <!-- FOOTER -->
   <footer>
     <p class="pull-right"><a href="#">Back to top</a></p>
     <p>&copy; 2016 AllStateTeam. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
+
 </div><!-- /.container -->
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
 <script src="js/vendor/bootstrap.min.js"></script>
 
 <script src="js/main.js"></script>
-
-<!--form script-->
-<script>
-    $("#example-vertical").steps({
-        headerTag: "h3",
-        bodyTag: "section",
-        transitionEffect: "slideLeft",
-        stepsOrientation: "vertical"
-    });
-</script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
