@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207011422) do
+ActiveRecord::Schema.define(version: 20160317154030) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "last_4",        limit: 255
@@ -107,6 +107,16 @@ ActiveRecord::Schema.define(version: 20160207011422) do
     t.string   "role",       limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "volunteers", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.decimal  "hours",                     precision: 10, default: 0
+    t.integer  "hours_rounded", limit: 4,                  default: 0
+    t.integer  "hours_month",   limit: 4,                  default: 0
+    t.date     "last_login"
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
   end
 
 end
