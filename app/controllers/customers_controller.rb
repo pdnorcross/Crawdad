@@ -4,7 +4,7 @@ class CustomersController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @customer = Customer.all
+    @customers = Customer.search_by_last4(params[:index])
   end
 
   def new
@@ -21,13 +21,10 @@ class CustomersController < ActionController::Base
     redirect_to @customer
   end
 
-  def search
-    @customers = Customer.search(params[:search])
-  end
-
-  private
+   private
   def customer_params
     params.require(:customer).permit!
   end
+
 
 end

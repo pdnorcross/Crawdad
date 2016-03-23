@@ -90,7 +90,7 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
 <div class="container marketing">
-
+  <form method="get" class="form-horizontal" action="<%= customers_path %>">
   <div class="page-header">
     <h1>Search Existing Client</h1>
   </div>
@@ -99,10 +99,11 @@
     <h2>Search By Last 4 Digits of Driver's License Number</h2>
     <div id="custom-search-input">
       <div class="input-group col-md-12">
-        <input type="text" class="  search-query form-control" placeholder="Search" />
+        <input name = "search_string" type="text" class="search-query form-control" id="search_field" placeholder="Search" />
+
                                 <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button">
-                                      <span class=" glyphicon glyphicon-search"></span>
+                                   <button class="btn btn-info" type="button">
+                                      <span class="glyphicon glyphicon-search"></span>
                                     </button>
                                 </span>
       </div>
@@ -124,6 +125,7 @@
       </div>
     </div>
   </div>
+</form>
 
 
 
@@ -132,6 +134,7 @@
     <p class="pull-right"><a href="#">Back to top</a></p>
     <p>&copy; 2016 AllStateTeam. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
+
 </div><!-- /.container -->
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
