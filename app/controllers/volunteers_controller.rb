@@ -17,29 +17,36 @@ class VolunteersController < ApplicationController
     if volunteer.exist?
 
       if volunteer.login_status == false
-       volunteer.login_status = true
-       volunteer.last_login = DateTime.now
-       volunteer.updated_at = date.current
+
+        volunteer.login_status = true
+        volunteer.last_login = DateTime.now
+        volunteer.updated_at = DateTime.now
+
       else
-        time = 10
-        hours = volunteer.updated_at - (time/24.0)
-        time = DateTime.now - (time/24.0)
-        volunteer.hours = hours + time
+
+       hours = hours(volunteer)
+       volunteer.hours = hours + time
+       last_month = last_month(volunteer)
+
           if last_month == true
             volunteer.hours_month = hours + new_hours
           else
             volunteer.hours_month = hours
           end
+
         volunteer.login_status = false
-     end
+
+      end
 
     else
+
       volunteer = Volunteer.create(volunteer_params)
-      if @volunteer.save
-        redirect_to @volunteer
+      if volunteer.save
+        redirect_to volunteer
       else
         render 'new'
       end
+
     end
 
     end
@@ -53,9 +60,30 @@ class VolunteersController < ApplicationController
     params.require(:volunteer).permit(:name)
   end
 
-  def last_month
+  def last_month(volunteer)
+
+    if volunteer
+      last_month = true
+    else
+      last_month = false
+    end
+
+    return last_month
 
   end
+
+  def current_time
+    time = 10
+    time = DateTime.now - (time/24.0)
+    return time
+  end
+
+  def hours(volunteer)
+    hours = DateTime.now - volunteer.last_login
+    return hours
+  end
+
+
 
 
 

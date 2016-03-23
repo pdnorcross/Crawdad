@@ -101,10 +101,11 @@
       <div class="input-group col-md-12">
         <input type="text" class="  search-query form-control" placeholder="Name"/>
                                 <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button">
-                                      <%= f.submit %>
+                                  <%=button_to "submit_hours", action: 'submit_hours' do%>
+                                  <button class="btn btn-info" type="button">
                                       <span class="glyphicon glyphicon-time"></span>
                                     </button>
+                                      <%end%>
                                 </span>
       </div>
     </div>
