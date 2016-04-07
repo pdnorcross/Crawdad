@@ -95,47 +95,48 @@
     <h1>New Client</h1>
   </div>
 
+<%= form_for @customer do |f| %>
   <div id="wizard">
     <h2>Personal Info</h2>
     <section>
 
       <h3>Applicant's Name:</h3>
       <div class="col-xs-4">
-        <input type="text" class="form-control" placeholder="First Name">
+        <%= f.text_field :fname, { class: 'form-control', placeholder: 'First Name' } %>
       </div>
       <div class="col-xs-4">
-        <input type="text" class="form-control" placeholder="Last Name">
+        <%= f.text_field :lname, { class: 'form-control', placeholder: 'Last Name' } %>
       </div>
       <div class="col-xs-2">
-        <input type="text" class="form-control" placeholder="MI">
+        <%= f.text_field :MI, { class: 'form-control', placeholder: 'MI' } %>
       </div>
 
 
 
       <h3 class="h3Form">Drivers license number:</h3>
       <div class="col-xs-4">
-        <input type="text" class="form-control" placeholder="Last 4 digits DLN">
+        <%= f.text_field :last_4, { class: 'form-control', placeholder: 'Last 4 digits DLN' } %>
       </div>
 
 
       <h3 class="h3Form">Address:</h3>
       <div class="col-xs-12">
-        <input type="text" class="form-control" placeholder="Address">
+        <%= f.text_field :address, { class: 'form-control', placeholder: 'Address' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="City">
+        <%= f.text_field :city, { class: 'form-control', placeholder: 'City' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="County">
+        <%= f.text_field :county, { class: 'form-control', placeholder: 'County' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="State">
+        <%= f.text_field :state, { class: 'form-control', placeholder: 'State' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Zip">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Phone No./Message Phone">
+        <%= f.text_field :phone_num, { class: 'form-control', placeholder: 'Phone No./Message Phone' } %>
       </div>
 
 
@@ -145,27 +146,27 @@
     <section>
       <h3>Demographic:</h3>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Date of Birth">
+        <%= f.text_field :DOB, { class: 'form-control', placeholder: 'Date of Birth' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Age">
+        <%= f.text_field :age, { class: 'form-control', placeholder: 'Age' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Race">
+        <%= f.text_field :race, { class: 'form-control', placeholder: 'Race' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Sex">
+        <%= f.text_field :sex, { class: 'form-control', placeholder: 'Sex' } %>
       </div>
       <h3 class="h3Form">Education:</h3>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Last Grade Attended">
+        <%= f.text_field :last_grade, { class: 'form-control', placeholder: 'Last Grade Attended' } %>
       </div>
       <h3 class="h3Form">Job Status:</h3>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Place of Employment">
+        <%= f.text_field :employer, { class: 'form-control', placeholder: 'Place of Employment' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Occupation">
+        <%= f.text_field :occupation, { class: 'form-control', placeholder: 'Occupation' } %>
       </div>
 
 
@@ -187,65 +188,72 @@
       </label>
       <div class="col-xs-6">
         <input type="text" class="form-control" placeholder="Spouse">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
         <input type="text" class="form-control" placeholder="ID">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
         <input type="text" class="form-control" placeholder="Date of Birth">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
         <input type="text" class="form-control" placeholder="Age">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
         <input type="text" class="form-control" placeholder="Place of Employment">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
         <input type="text" class="form-control" placeholder="Occupation">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
         <input type="text" class="form-control" placeholder="Source of Referral">
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
 
     </section>
 
+<%= f.fields_for :donor do |d| %>
     <h2>Household Members</h2>
     <section>
       <h3>Household Members:</h3>
       <div id="entry1" class="clonedInput">
         <fieldset>
-
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="First Name">
+            <%= d.text_field :fname, { class: 'form-control', placeholder: 'First Name' } %>
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="Last Name">
+            <%= d.text_field :lname, { class: 'form-control', placeholder: 'Last Name' } %>
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="on food stamp/DATE">
+            <%= d.text_field :food_stamps, { class: 'form-control', placeholder: 'on food stamp/DATE' } %>
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="DOB (mm/dd/yyyy)">
+            <%= d.text_field :DOB, { class: 'form-control', placeholder: 'DOB (mm/dd/yyyy)' } %>
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="Age">
+            <%= d.text_field :age, { class: 'form-control', placeholder: 'Age' } %>
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="Relationship">
+            
           </div>
             </fieldset>
 
       </div><!-- end #entry1 -->
+
+
       <!-- Button (Double) -->
       <p>
         <button type="button" id="btnAdd" name="btnAdd" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
         <button type="button" id="btnDel" name="btnDel" class="btn btn-danger"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></button>
       </p>
-
-
       </fieldset>
-
     </section>
+<% end %>
 
     <h2>Monthly Income</h2>
     <section>
@@ -254,61 +262,61 @@
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Salary/Self">
+          <%= f.text_field :salary, { class: 'form-control', placeholder: 'Salary/Self' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Salary/Spouse">
+          <%= f.text_field :salary_spouse, { class: 'form-control', placeholder: 'Salary/Spouse' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Salary/Household Members">
+          <%= f.text_field :salary_house, { class: 'form-control', placeholder: 'Salary/Household Members' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="AFDC/Child Support">
+          <%= f.text_field :child_support, { class: 'form-control', placeholder: 'AFDC/Child Support' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Food Stamps">
+          <%= f.text_field :food_stamps, { class: 'form-control', placeholder: 'Food Stamps' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="WIC">
+          <%= f.text_field :WIC, { class: 'form-control', placeholder: 'WIC' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Unemployment Compensation">
+          <%= f.text_field :unemployment, { class: 'form-control', placeholder: 'Unemployment Compensation' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Social Security">
+          <%= f.text_field :ssi, { class: 'form-control', placeholder: 'Social Security' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="SSI (Disablility)">
+          <%= f.text_field :SSI_note, { class: 'form-control', placeholder: 'SSI (Disablility)' } %>
           <div class="input-group-addon">.00</div>
         </div>
         <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
         <div class="input-group">
           <div class="input-group-addon">$</div>
-          <input type="text" class="form-control" id="exampleInputAmount" placeholder="Other">
+          <%= f.text_field :other_note, { class: 'form-control', placeholder: 'Other' } %>
           <div class="input-group-addon">.00</div>
         </div>
     </section>
@@ -318,43 +326,43 @@
       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Rent/Mortgage">
+        <%= f.text_field :rent_mortgage, { class: 'form-control', placeholder: 'Rent/Mortgage' } %>
         <div class="input-group-addon">.00</div>
       </div>
       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Electricity">
+        <%= f.text_field :electricity, { class: 'form-control', placeholder: 'Electricity' } %>
         <div class="input-group-addon">.00</div>
       </div>
       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Gas">
+        <%= f.text_field :gas, { class: 'form-control', placeholder: 'Gas' } %>
         <div class="input-group-addon">.00</div>
       </div>
       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Water">
+        <%= f.text_field :water, { class: 'form-control', placeholder: 'Water' } %>
         <div class="input-group-addon">.00</div>
       </div>
       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Medicine">
+        <%= f.text_field :medicine, { class: 'form-control', placeholder: 'Medicine' } %>
         <div class="input-group-addon">.00</div>
       </div>
       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Medicial Supplies">
+        <%= f.text_field :med_supplies, { class: 'form-control', placeholder: 'Medicial Supplies' } %>
         <div class="input-group-addon">.00</div>
       </div>
       <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
       <div class="input-group">
         <div class="input-group-addon">$</div>
-        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Other">
+        <%= f.text_field :other_exp, { class: 'form-control', placeholder: 'Other' } %>
         <div class="input-group-addon">.00</div>
       </div>
     </section>
@@ -364,19 +372,23 @@
       <div class="checkbox">
         <label>
           <input type="checkbox" id="blankCheckbox" value="Blue">Blue Form
+          <%= f.check_box_tag :other_exp, { class: 'form-control', placeholder: 'Other' } %>
         </label>
       </div>
       <div class="checkbox">
         <label>
           <input type="checkbox" id="blankCheckbox" value="USDA">Application for USDA Donated Foods
+          <%= f.check_box_tag :other_exp, { class: 'form-control', placeholder: 'Application for USDA Donated Foods' } %>
         </label>
       </div>
       <h3>Any Additional Notes/Comments?:</h3>
       <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+      <%= f.text_field :other_note, { class: 'form-control', placeholder: '' } %>
     </section>
     </div>
+    <%= f.submit %>
   </div><!-- /.container -->
-
+<% end %>
   <!--footer-->
   <footer>
     <p class="pull-right"><a href="#">Back to top</a></p>
