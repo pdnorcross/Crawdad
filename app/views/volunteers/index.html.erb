@@ -89,7 +89,7 @@
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<%= form_for @customer do |f| %>
+<%= form_for @volunteers do |f| %>
 <div class="container marketing">
 
   <div class="page-header">
@@ -100,13 +100,11 @@
     <h2>First and Last Name</h2>
     <div id="custom-search-input">
       <div class="input-group col-md-12">
-        <input type="text" class="  search-query form-control" placeholder="Name"/>
-                                <span class="input-group-btn">
-                                  <%=f.submit%>
-                                  <button class="btn btn-info" type="button">
-                                      <span class="glyphicon glyphicon-time"></span>
-                                    </button>
-                                      <%end%>
+        <%= f.text_field :name, { class: 'search-query form-control', placeholder: 'Name' } %>
+                                        <span class="input-group-btn">
+
+                                  <span class="glyphicon glyphicon-time"></span>
+                                          <%=f.submit; {class: 'btn btn-info'}%>
                                 </span>
       </div>
     </div>
