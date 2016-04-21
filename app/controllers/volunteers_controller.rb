@@ -1,4 +1,5 @@
 class VolunteersController < ApplicationController
+
   def index
     @volunteers = Volunteer.all
   end
@@ -11,19 +12,41 @@ class VolunteersController < ApplicationController
     @volunteer = Volunteer.find(params[:id])
   end
 
-  def create
-    @volunteer = Volunteer.new(volunteer_params)
-    if @volunteer.save
-      redirect_to action: "new"
+
+  def signed_in
+    @volunteer = Volunteer.new
+    check_exists
+    if check_exists == true
+      @volunteer = Volunteer.find_by(name: name)
+      if @volunteer.login_status == false
+        @volunteer.login_status = true
+        @volunteer.last_login = Date.today
+        @volunteer.updated_at = DateTime.now
+      else
+        @volunteer.signed_in = false
+        @volunteers.hours = @volunteer.updated_at - DateTime.now
+      end
     else
-      render 'new'
+      @volunteer = Volunteer.new(volunteer_params)
+      @volunteer.login_status = true
+      @volunteer.save
     end
+    render 'create'
   end
 
   private
 
   def volunteer_params
     params.require(:volunteer).permit(:name)
+  end
+
+  def check_exists
+    @volunteer = Volunteer.find_by_name(self.name)
+    if @volunteer != nil
+      return true
+    else
+      return false
+    end
   end
 
   # def last_month(volunteer)

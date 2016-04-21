@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
    root 'home#index'
-  resources :home
-  resources :customers
-  resources :reports
-  resources :volunteers
 
+  resources :volunteers do
+    collection do
+      post :signed_in
+    end
+
+  end
+
+   resources :home
+   resources :customers
+   resources :reports
 
   end
