@@ -116,12 +116,12 @@
     <h2>Search By First and Last Name</h2>
     <div id="custom-search-input">
       <div class="input-group col-md-12">
-        <input type="text" class="  search-query form-control" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button">
-                                      <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
+        <%= form_tag(customers_path, :method => 'get', id: 'search-form') do %>
+            <%= text_field_tag :search, params[:search], class: 'search-query form-control', placeholder: 'Search' %>
+            <span class="input-group-btn">
+              <%= submit_tag '', class: 'btn btn-info' %>
+            </span>
+        <% end %>
       </div>
     </div>
   </div>
