@@ -11,5 +11,7 @@ accepts_nested_attributes_for :donor
     end
   end
 
-
+  def submit
+  	redirect_to "customers/show"
+  end
 end

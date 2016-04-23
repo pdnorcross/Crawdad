@@ -89,6 +89,8 @@
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
+<!-- tfw you can't see any changes you're making (╯°□°）╯︵ ┻━┻ -->
+
 <div class="container marketing">
 
   <div class="page-header">
@@ -172,52 +174,44 @@
 
       <h3 class="h3Form">Marital Status:</h3>
       <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="single" value="option1"> Single
+        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Single' } %>
       </label>
       <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="married" value="option2"> Married
+        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Married' } %>
       </label>
       <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="divorced" value="option3"> Divorced
+        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Divorced' } %>
       </label>
       <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="widowed" value="option4"> Widowed
+        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Widowed' } %>
       </label>
       <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="separated" value="option5"> Separated
+        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Separated' } %>
       </label>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Spouse">
-        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :Spouse, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="ID">
-        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :ID, { class: 'form-control', placeholder: 'ID' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Date of Birth">
-        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :DOB, { class: 'form-control', placeholder: 'Date of Birth' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Age">
-        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :age, { class: 'form-control', placeholder: 'Age' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Place of Employment">
-        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :blank, { class: 'form-control', placeholder: 'Place of Employment' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Occupation">
-        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :occupation, { class: 'form-control', placeholder: 'Occupation' } %>
       </div>
       <div class="col-xs-6">
-        <input type="text" class="form-control" placeholder="Source of Referral">
-        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :blank, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
 
     </section>
 
-<%= f.fields_for :donor do |d| %>
     <h2>Household Members</h2>
     <section>
       <h3>Household Members:</h3>
@@ -253,7 +247,6 @@
       </p>
       </fieldset>
     </section>
-<% end %>
 
     <h2>Monthly Income</h2>
     <section>
@@ -371,22 +364,19 @@
       <h3>Have you received the following documents?:</h3>
       <div class="checkbox">
         <label>
-          <input type="checkbox" id="blankCheckbox" value="Blue">Blue Form
           <%= f.check_box_tag :other_exp, { class: 'form-control', placeholder: 'Other' } %>
         </label>
       </div>
       <div class="checkbox">
         <label>
-          <input type="checkbox" id="blankCheckbox" value="USDA">Application for USDA Donated Foods
           <%= f.check_box_tag :other_exp, { class: 'form-control', placeholder: 'Application for USDA Donated Foods' } %>
         </label>
       </div>
       <h3>Any Additional Notes/Comments?:</h3>
-      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
       <%= f.text_field :other_note, { class: 'form-control', placeholder: '' } %>
     </section>
     </div>
-    <%= f.submit %>
+    <%= f.submit, :role => 'menuitem'%>
   </div><!-- /.container -->
 <% end %>
   <!--footer-->
