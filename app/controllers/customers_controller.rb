@@ -17,11 +17,11 @@ class CustomersController < ActionController::Base
 
   def create
     @customer = Customer.new(customer_params)
+    @customerShow = Customer.show(customer_params)
 
-    if @customer.save
-      redirect_to @customer
-    else  
-      render 'show'
+    @customer.save
+      redirect_to @customerShow
+
   end
 
   def search

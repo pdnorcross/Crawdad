@@ -164,6 +164,12 @@
         <%= f.text_field :last_grade, { class: 'form-control', placeholder: 'Last Grade Attended' } %>
       </div>
       <h3 class="h3Form">Job Status:</h3>
+      <div class="checkbox">
+      <label>
+        <%= f.check_box_tag :occupation, "unemployed" %>
+        <%= f.label :occupation, "Unemployed", :value => "unemployed" %>
+      </label>
+      </div>
       <div class="col-xs-6">
         <%= f.text_field :employer, { class: 'form-control', placeholder: 'Place of Employment' } %>
       </div>
@@ -173,26 +179,42 @@
 
 
       <h3 class="h3Form">Marital Status:</h3>
+
       <label class="radio-inline">
-        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Single' } %>
+
+        <%= f.radio_button :other_inc, "single" %>
+        <%= f.label :other_inc, "Single", :value => "single" %>
+
       </label>
       <label class="radio-inline">
-        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Married' } %>
+
+        <%= f.radio_button :other_inc, "married" %>
+        <%= f.label :other_inc, "Married", :value => "married" %>
+
       </label>
       <label class="radio-inline">
-        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Divorced' } %>
+
+        <%= f.radio_button :other_inc, "divorced" %>
+        <%= f.label :other_inc, "Divorced", :value => "divorced" %>
+
       </label>
       <label class="radio-inline">
-        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Widowed' } %>
+
+        <%= f.radio_button :other_inc, "widowed" %>
+        <%= f.label :other_inc, "Widowed", :value => "widowed" %>
+
       </label>
       <label class="radio-inline">
-        <%= f.radio_button :blank, { class: 'form-control', placeholder: 'Separated' } %>
+
+        <%= f.radio_button :other_inc, "separated" %>
+        <%= f.label :other_inc, "Separated", :value => "separated" %>
+
       </label>
       <div class="col-xs-6">
-        <%= f.text_field :Spouse, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :other_inc, { class: 'form-control', placeholder: 'Spouse' } %>
       </div>
       <div class="col-xs-6">
-        <%= f.text_field :ID, { class: 'form-control', placeholder: 'ID' } %>
+      <input type="text" class="form-control" placeholder="ID">
       </div>
       <div class="col-xs-6">
         <%= f.text_field :DOB, { class: 'form-control', placeholder: 'Date of Birth' } %>
@@ -201,17 +223,18 @@
         <%= f.text_field :age, { class: 'form-control', placeholder: 'Age' } %>
       </div>
       <div class="col-xs-6">
-        <%= f.text_field :blank, { class: 'form-control', placeholder: 'Place of Employment' } %>
+        <%= f.text_field :employer, { class: 'form-control', placeholder: 'Place of Employment' } %>
       </div>
       <div class="col-xs-6">
         <%= f.text_field :occupation, { class: 'form-control', placeholder: 'Occupation' } %>
       </div>
       <div class="col-xs-6">
-        <%= f.text_field :blank, { class: 'form-control', placeholder: 'Zip' } %>
+        <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
       </div>
 
     </section>
 
+<%= form_for @customer do |d| %>
     <h2>Household Members</h2>
     <section>
       <h3>Household Members:</h3>
@@ -238,7 +261,7 @@
             </fieldset>
 
       </div><!-- end #entry1 -->
-
+<% end %>
 
       <!-- Button (Double) -->
       <p>
@@ -364,19 +387,23 @@
       <h3>Have you received the following documents?:</h3>
       <div class="checkbox">
         <label>
-          <%= f.check_box_tag :other_exp, { class: 'form-control', placeholder: 'Other' } %>
+        <%= f.check_box_tag :other_exp, "blueForm" %>
+        <%= f.label :other_exp, "Blue Form", :value => "blueForm" %>
+
         </label>
       </div>
       <div class="checkbox">
         <label>
-          <%= f.check_box_tag :other_exp, { class: 'form-control', placeholder: 'Application for USDA Donated Foods' } %>
+        <%= f.check_box_tag :other_exp, "usda" %>
+        <%= f.label :other_exp, "Application for USDA Donated Foods", :value => "usda" %>
+
         </label>
       </div>
       <h3>Any Additional Notes/Comments?:</h3>
       <%= f.text_field :other_note, { class: 'form-control', placeholder: '' } %>
     </section>
     </div>
-    <%= f.submit, :role => 'menuitem'%>
+    <%= f.submit class: 'submitButton' %>
   </div><!-- /.container -->
 <% end %>
   <!--footer-->
