@@ -13,27 +13,6 @@ class VolunteersController < ApplicationController
   end
 
 
-  def signed_in
-    @volunteer = Volunteer.new
-    check_exists
-    if check_exists == true
-      @volunteer = Volunteer.find_by(name: name)
-      if @volunteer.login_status == false
-        @volunteer.login_status = true
-        @volunteer.last_login = Date.today
-        @volunteer.updated_at = DateTime.now
-      else
-        @volunteer.signed_in = false
-        @volunteers.hours = @volunteer.updated_at - DateTime.now
-      end
-    else
-      @volunteer = Volunteer.new(volunteer_params)
-      @volunteer.login_status = true
-      @volunteer.save
-    end
-    render 'create'
-  end
-
   private
 
   def volunteer_params
