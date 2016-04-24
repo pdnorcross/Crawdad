@@ -4,4 +4,16 @@ Rails.application.routes.draw do
   resources :customers
   resources :reports
   resources :volunteers
+
+
+   namespace :api, defaults: { format: 'json' } do
+     namespace :v1 do
+       resources :reports, except: [:index, :new, :create, :show, :edit, :update, :destroy] do
+         collection do
+           post :generate_reports
+         end
+       end
+
+     end
+   end
   end
