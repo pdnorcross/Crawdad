@@ -4,11 +4,8 @@ has_many :dependent
 accepts_nested_attributes_for :dependent
 
   def self.search(search)
-    if search
-      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
+    where('name LIKE ?', '%#{search}%')
+    where('last_4 LIKE ?', '%#{search}%')
   end
 
   def submit

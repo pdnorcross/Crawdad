@@ -90,40 +90,33 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
 <div class="container marketing">
-
+  <form method="get" class="form-horizontal" action="<%= customers_path %>">
   <div class="page-header">
     <h1>Search Existing Client</h1>
   </div>
 
   <div class="row">
-    <h2>Search By Last 4 Digits of Driver's License Number</h2>
+    <h2>Search By First and Last Name or Last 4</h2>
     <div id="custom-search-input">
       <div class="input-group col-md-12">
-        <input type="text" class="  search-query form-control" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button">
-                                      <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
+        <%= form_tag(customers_path, :method => 'get', id: 'search-form') do %>
+            <%= text_field_tag :search, params[:search], class: 'search-query form-control', placeholder: 'Search' %>
+            <span class="input-group-btn">
+              <%= submit_tag '', class: 'btn btn-info' %>
+            </span>
+        <% end %>
+
+        <% if @customers.nil? %>
+            <p>There are no customers containing the term(s) <%= params[:search] %>.
+        <% else %>
+
+              <%= render @customers %></p>
+        <% end %>
+
       </div>
     </div>
   </div>
-  <div class="page-header">
-    <h1><small>-or-</small></h1>
-  </div>
-  <div class="row">
-    <h2>Search By First and Last Name</h2>
-    <div id="custom-search-input">
-      <div class="input-group col-md-12">
-        <input type="text" class="  search-query form-control" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-info" type="button">
-                                      <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-      </div>
-    </div>
-  </div>
+</form>
 
 
 
@@ -132,6 +125,7 @@
     <p class="pull-right"><a href="#">Back to top</a></p>
     <p>&copy; 2016 AllStateTeam. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
+
 </div><!-- /.container -->
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 

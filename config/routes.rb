@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     end
   end
   resources :home
-  resources :customers
+  resources :customers do
+    collection do
+      get :search
+    end
+  end
   resources :reports
 
    namespace :api, defaults: { format: 'json' } do
