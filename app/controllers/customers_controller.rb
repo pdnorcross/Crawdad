@@ -17,10 +17,10 @@ class CustomersController < ActionController::Base
 
   def create
     @customer = Customer.new(customer_params)
-    @customerShow = Customer.show(customer_params)
+    
 
     @customer.save
-      redirect_to @customerShow
+      redirect_to @customer
 
   end
 
