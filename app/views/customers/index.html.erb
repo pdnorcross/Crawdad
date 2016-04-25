@@ -18,7 +18,7 @@
           padding-bottom: 20px;
       }
   </style>
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="../assets/bootstrap-theme.min.css">
   <!-- Custom styles for this template -->
 
   <link rel="stylesheet" href="../assets/normalize.css">
@@ -102,15 +102,15 @@
         <%= form_tag(customers_path, :method => 'get', id: 'search-form') do %>
             <%= text_field_tag :search, params[:search], class: 'search-query form-control', placeholder: 'Search' %>
             <span class="input-group-btn">
-              <%= submit_tag '', class: 'btn btn-info' %>
+              <%= submit_tag '', :name => nil, class: 'btn btn-info' %>
             </span>
         <% end %>
 
-        <% if @customers.nil? %>
-            <p>There are no customers containing the term(s) <%= params[:search] %>.
-        <% else %>
 
-              <%= render @customers %></p>
+        <% if @customer.present? %>
+            <%= render @customer %>
+        <% else %>
+            <p>There are no clients with <%= params[:search] %>.</p>
         <% end %>
 
       </div>
@@ -127,11 +127,11 @@
   </footer>
 
 </div><!-- /.container -->
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="../assets/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-<script src="js/vendor/bootstrap.min.js"></script>
+<script src="../assets/vendor/bootstrap.min.js"></script>
 
-<script src="js/main.js"></script>
+<script src="../assets/main.js"></script>
 
 <!--form script-->
 <script>

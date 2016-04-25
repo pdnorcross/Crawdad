@@ -4,11 +4,9 @@ class CustomersController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @customers = Customer.all
+
     if params[:search]
-      @customers = Customer.search(params[:search])
-    else
-      @customers = Customer.all
+      @customer = Customer.search(params[:search])
     end
   end
 
@@ -18,10 +16,6 @@ class CustomersController < ActionController::Base
 
   def show
     @customer = Customer.find(params[:id])
-  end
-
-  def search
-
   end
 
   def create
