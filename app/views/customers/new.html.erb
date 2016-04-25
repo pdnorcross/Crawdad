@@ -234,7 +234,7 @@
 
     </section>
 
-<%= f.fields_for :dependent do |d| %> <!--  <- that is what should point to the right table, but it hidels this secion instead  -->
+<%= form_for @customer do |d| %>
     <h2>Household Members</h2>
     <section>
       <h3>Household Members:</h3>
@@ -261,7 +261,7 @@
             </fieldset>
 
       </div><!-- end #entry1 -->
-
+<% end %>
 
       <!-- Button (Double) -->
       <p>
@@ -270,7 +270,6 @@
       </p>
       </fieldset>
     </section>
-<% end %>
 
     <h2>Monthly Income</h2>
     <section>
@@ -415,9 +414,9 @@
 
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-  <script src="../assets/javascripts/vendor/bootstrap.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
 
-  <script src="../assets/javascripts/main.js"></script> 
+  <script src="js/main.js"></script>
 
   <!--form script-->
   <script>

@@ -1,7 +1,7 @@
 class Customer < ActiveRecord::Base
 
-has_many :dependent 
-accepts_nested_attributes_for :dependent
+has_many :donor 
+accepts_nested_attributes_for :donor
 
   def self.search(search)
     if search

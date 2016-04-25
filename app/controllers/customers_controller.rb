@@ -17,10 +17,10 @@ class CustomersController < ActionController::Base
 
   def create
     @customer = Customer.new(customer_params)
+    @customerShow = Customer.show(customer_params)
 
     @customer.save
-    flash[:success] = "Customer Successfully Saved!" 
-      redirect_to @customer
+      redirect_to @customerShow
 
   end
 
