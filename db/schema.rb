@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420222755) do
+ActiveRecord::Schema.define(version: 20160424205022) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "last_4",        limit: 255
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160420222755) do
     t.float    "child_support", limit: 24
     t.string   "food_stamps",   limit: 255
     t.float    "WIC",           limit: 24
-    t.float    "unemployment",  limit: 24
+    t.boolean  "unemployment"
     t.float    "social",        limit: 24
     t.float    "ssi",           limit: 24
     t.string   "SSI_note",      limit: 255
@@ -115,10 +115,8 @@ ActiveRecord::Schema.define(version: 20160420222755) do
     t.integer  "hours_rounded", limit: 4,                  default: 0
     t.integer  "hours_month",   limit: 4,                  default: 0
     t.date     "last_login"
-    t.datetime "created_at",                                              null: false
-    t.datetime "updated_at",                                              null: false
-    t.boolean  "login_status",                             default: true
-    t.boolean  "signed_in"
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
   end
 
 end
