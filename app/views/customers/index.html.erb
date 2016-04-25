@@ -96,24 +96,7 @@
   </div>
 
   <div class="row">
-    <h2>Search By Last 4 Digits of Driver's License Number</h2>
-    <div id="custom-search-input">
-      <div class="input-group col-md-12">
-        <input name = "search_string" type="text" class="search-query form-control" id="search_field" placeholder="Search" />
-
-                                <span class="input-group-btn">
-                                   <button class="btn btn-info" type="button">
-                                      <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
-      </div>
-    </div>
-  </div>
-  <div class="page-header">
-    <h1><small>-or-</small></h1>
-  </div>
-  <div class="row">
-    <h2>Search By First and Last Name</h2>
+    <h2>Search By First and Last Name or Last 4</h2>
     <div id="custom-search-input">
       <div class="input-group col-md-12">
         <%= form_tag(customers_path, :method => 'get', id: 'search-form') do %>
@@ -122,6 +105,14 @@
               <%= submit_tag '', class: 'btn btn-info' %>
             </span>
         <% end %>
+
+        <% if @customers.nil? %>
+            <p>There are no customers containing the term(s) <%= params[:search] %>.
+        <% else %>
+
+              <%= render @customers %></p>
+        <% end %>
+
       </div>
     </div>
   </div>
