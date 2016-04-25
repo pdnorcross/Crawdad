@@ -89,7 +89,7 @@
 ================================================== -->
 <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<%= form_for @volunteer do |f| %>
+<%= form_tag({:controler => 'volunteers', :action=> 'request_sign_in'}, method: :post) do %>
     <div class="container marketing">
 
       <div class="page-header">
@@ -100,9 +100,9 @@
       <h2>First and Last Name</h2>
         <div id="custom-search-input">
           <div class="input-group col-md-12">
-            <%= f.text_field :name, { class: 'search-query form-control', placeholder: 'Name' } %>
+            <%= text_field_tag :name %>
             <span class="input-group-btn">
-              <%=f.submit '', :class => 'btn btn-info'%>
+              <%= submit_tag '', :class => 'btn btn-info'%>
             </span>
           </div>
         </div>

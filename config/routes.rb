@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :volunteers do
     collection do
-      post :signed_in
+      post :post_request_sign_in
+      post :request_sign_in
     end
   end
   resources :home
