@@ -33,67 +33,68 @@
 <!-- NAVBAR
 ================================================== -->
 <body>
+
 <div class="navbar-wrapper">
   <div class="container">
-    <div id = wrapperHeader">
-    <div id="header">
-      <img src="../assets/Banner.jpg" alt="Helping Hand" >
+    <div id="wrapperHeader">
+      <div id="header">
+        <img src="../assets/banner.jpg" alt="Helping Hand" >
+      </div>
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"></a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="/home/#">Home</a></li>
+              <li><a href="/customers/#">Search Existing Clients</a></li>
+              <li><a href="/customers/new">New Clients</a></li>
+              <li><a href="/volunteers/new">Volunteer Clocking</a><li>
+              <li><a href="/reports/#">Monthly Reports</a><li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+              </div>
+              <button type="signOut" class="btn btn-default">Sign Out</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
     </div>
-      </div>
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Helping Hand of Greater Little Rock</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/home/#">Home</a></li>
-            <li><a href="/customers/#">Search Existing Clients</a></li>
-            <li><a href="/customers/new">New Clients</a></li>
-            <li><a href="/volunteers/new">Volunteer Clocking</a><li>
-            <li><a href="/reports/#">Monthly Reports</a><li>
-          </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-            </div>
-            <button type="signOut" class="btn btn-default">Sign Out</button>
-          </form>
-        </div>
-      </div>
-    </nav>
   </div>
-</div>
 
-<!-- Marketing messaging and featurettes
-================================================== -->
-<!-- Wrap the rest of the page in another container to center all the content. -->
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
 
-<div id="fix" class="container marketing">
+  <div id="fix" class="container marketing">
 
-  <!-- Three columns of text below the carousel -->
-  <div class="row">
-    <div class="col-lg-4">
-      <img class="img-circle" src="../assets/plus_image.png" alt="Generic placeholder image" width="140" height="140">
-      <h2>Search Existing Clients</h2>
-      <p><a class="btn btn-primary" href="/customers/#" role="button">Search Here</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <img class="img-circle" src="../assets/plus_image.png" alt="Generic placeholder image" width="140" height="140">
-      <h2>New Clients</h2>
-      <p><a class="btn btn-primary" href="/customers/new" role="button">Register New</a></p>
-    </div><!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <img class="img-circle" src="../assets/plus_image.png" alt="Generic placeholder image" width="140" height="140">
-      <h2>Volunteer Clocking</h2>
-      <p><a class="btn btn-primary" href="volunteer.html" role="b`utton">Clock In/Out Here</a></p>
-    </div><!-- /.col-lg-4 -->
-  </div><!-- /.row -->
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="img-circle" src="../assets/plus_image.jpg" alt="Generic placeholder image" width="140" height="140">
+        <h2>Search Existing Clients</h2>
+        <p><a class="btn btn-primary" href="/customers/#" role="button">Search Here</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="../assets/plus_image.jpg" alt="Generic placeholder image" width="140" height="140">
+        <h2>New Clients</h2>
+        <p><a class="btn btn-primary" href="/customers/new" role="button">Register New</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="../assets/plus_image.jpg" alt="Generic placeholder image" width="140" height="140">
+        <h2>Volunteer Clocking</h2>
+        <p><a class="btn btn-primary" href="/volunteers/new" role="button">Clock In/Out Here</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
 
 
   <!-- FOOTER -->
@@ -121,5 +122,6 @@
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 </script>
+  </div>
 </body>
 </html>
