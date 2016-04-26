@@ -5,43 +5,43 @@
    ========================================================================== */
 
 h3{
-margin-top: 5px;
- }
-.h3Form{
-margin-top:60px;
- }
-#navbar2{
-margin-top: -35px;
- }
-#fix{
-margin-top: 60px;
- }
-#custom-search-input {
-        margin:0;
-        margin-top: 10px;
-        padding: 0;
+    margin-top: 5px;
 }
- 
+.h3Form{
+    margin-top:60px;
+}
+#navbar2{
+    margin-top: -35px;
+}
+#fix{
+    margin-top: 60px;
+}
+#custom-search-input {
+    margin:0;
+    margin-top: 10px;
+    padding: 0;
+}
+
 #custom-search-input .search-query {
-        padding-right: 3px;
-        padding-right: 4px \9;
-        padding-left: 3px;
-        padding-left: 4px \9;
-        /* IE7-8 doesn't have border-radius, so don't indent the padding */
- 
-        margin-bottom: 0;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        border-radius: 3px;
-    }
- 
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
 .search-query:focus + button {
-        z-index: 3;   
-  }
+    z-index: 3;
+}
 
 .row{
-padding: 1.4em;
- }
+    padding: 1.4em;
+}
 
 .btn-select {
     position: relative;
@@ -246,24 +246,13 @@ padding: 1.4em;
     color: black;
 }
 #buttonWidth{
-width:500%;
- }
+    width:500%;
+}
 ul li{
-text-align:center;
- }
+    text-align:center;
+}
 body{
-margin-top:-25px;
- }
-
-.submitButton {
-    background: #2184be;
-    color: #fff;
-    display: block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    margin-top:-25px;
 }
 
 
