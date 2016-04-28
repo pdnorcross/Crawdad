@@ -19,9 +19,15 @@ class CustomersController < ActionController::Base
     @customer = Customer.new(customer_params)
     
 
-    @customer.save
-      redirect_to @customer
+  #  @customer.save
+  #    redirect_to @customer
 
+      if @customer.save
+        flash[:success] = "Customer has successfully been added"
+        redirect_to @customer
+      else
+        flash[:error] = "Unable to add customer"
+      end
   end
 
   def search
