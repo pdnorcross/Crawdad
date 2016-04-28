@@ -54,7 +54,7 @@
   <div class="container">
     <div id="wrapperHeader">
       <div id="header">
-        <img src="../assets/banner.jpg" alt="Helping Hand" >
+        <img src="../assets/Banner.jpg" alt="Helping Hand" >
       </div>
       <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
@@ -109,14 +109,24 @@
               <%= submit_tag '', :name => nil, class: 'btn btn-info' %>
             </span>
         <% end %>
+      </div>
 
-
-        <% if @customer.present? %>
-            <%= render @customer %>
-        <% else %>
-            <p>There are no clients with <%= params[:search] %>.</p>
+      <div class="row">
+        <% if @customers.present? %>
+            <table id='datatable'>
+              <tr>
+                <th> First Name </th>
+                <th> Last Name </th>
+                <th> Last 4 </th>
+                <th> Address </th>
+                <th> City </th>
+                <th> State </th>
+                <th> Zip </th>
+                <th> Last Visit </th>
+              </tr>
+              <%= render @customers %>
+            </table>
         <% end %>
-
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@ class CustomersController < ActionController::Base
 
   def index
     if params[:search]
-      @customer = Customer.search(params[:search])
+      @customers = Customer.search(params[:search])
     end
   end
 
