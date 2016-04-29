@@ -13,14 +13,23 @@ class CustomersController < ActionController::Base
     @customer = Customer.new
   end
 
+  def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      redirect_to @customer
+    else
+      render 'edit'
+    end
+  end
+
   def show
     @customer = Customer.find(params[:id])
   end
 
   def create
-    @customer = Customer.new(customer_params)
-    @customer.save
-    redirect_to @customer
+    @customers = Customer.new(customer_params)
+    @customers.save
+    redirect_to @customers
   end
 
    private
