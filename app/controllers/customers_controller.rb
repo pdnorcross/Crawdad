@@ -13,16 +13,11 @@ class CustomersController < ActionController::Base
     @customer = Customer.new
   end
 
-  def update
+  def show
     @customer = Customer.find(params[:id])
-    if @customer.update(customer_params)
-      redirect_to @customer
-    else
-      render 'edit'
-    end
   end
 
-  def show
+  def edit
     @customer = Customer.find(params[:id])
   end
 
@@ -30,6 +25,15 @@ class CustomersController < ActionController::Base
     @customers = Customer.new(customer_params)
     @customers.save
     redirect_to @customers
+  end
+
+  def update
+    @customers = Customer.find(params[:id])
+    if @customers.update(customer_params)
+      redirect_to @customers
+    else
+      render 'show'
+    end
   end
 
    private
