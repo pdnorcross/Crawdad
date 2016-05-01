@@ -92,8 +92,6 @@
  <!-- tfw you can't see any changes you're making (╯°□°）╯︵ ┻━┻ -->
  
  <div class="container marketing">
- 
-<%= render partial: 'flash_messages' %>
 
    <div class="page-header">
      <h1>New Client</h1>
@@ -237,7 +235,7 @@
       </section>
   
 
- <%= fields_for :dependent do |d| %> 
+ <%= f.fields_for :dependent do |d| %> <!--  <- that is what should point to the right table, but it hidels this secion instead  -->
       <h2>Household Members</h2>
       <section>
         <h3>Household Members:</h3>
@@ -275,7 +273,7 @@
         </fieldset>
       </section>
  <% end %>
-
+  
       <h2>Monthly Income</h2>
       <section>
        <h3>Source of Monthly Income</h3>

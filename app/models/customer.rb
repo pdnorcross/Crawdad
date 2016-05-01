@@ -3,23 +3,20 @@ class Customer < ActiveRecord::Base
 has_many :dependent 
 accepts_nested_attributes_for :dependent
 
-before_create :validate_record
+#this is not right
+#validates_numericality_of :last_4, :on => :create,
+#  :greater_than_or_equal_to => 2,
+#  :message => "This customer has exceeded their monthly limit."
 
-def validateCustomer
-  customer = Customer.where(
-    created_at: Time.now.beginning_of_month..Time.now.end_of_month,
-    address: self.address,
-    last_4: self.last_4)
-  if customer.length > 2
-    return false
-  end
-end
+#validates_presence_of :address, :on => :create,
+#  :presence => true
 
-  def validate_record
-    if validateCustomer
-      errors.add(:customer, "This customer has exceeded their monthly limit.")
-    end
-  end
+  sql = "select if(count(*)>2)
+           from customers 
+           where last_4 = '8674'
+           or
+           address = '1111 Main Street'"
+
 
   def self.search(search)
     if search
