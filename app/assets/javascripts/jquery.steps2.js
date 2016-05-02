@@ -1744,7 +1744,7 @@ var defaults = $.fn.steps.defaults = {
      * @default false
      * @for defaults
      **/
-    enableAllSteps: false,
+    enableAllSteps: true,
 
     /**
      * Enables keyboard navigation if `true` (arrow left and arrow right).

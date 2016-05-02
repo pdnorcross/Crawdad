@@ -89,7 +89,7 @@ $(function () {
         $('#btnDel').attr('disabled', false);
 
     // Right now you can only add 4 sections, for a total of 5. Change '5' below to the max number of sections you want to allow.
-        if (newNum == 8)
+        if (newNum == 25)
         $('#btnAdd').attr('disabled', true).prop('value', "You've reached the limit"); // value here updates the text in the 'add' button when the limit is reached 
     });
 

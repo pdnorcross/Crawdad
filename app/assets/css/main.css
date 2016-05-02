@@ -245,8 +245,10 @@ padding: 1.4em;
     background-color: white;
     color: black;
 }
-#buttonWidth{
-width:500%;
+.buttonWidth{
+width:100%;
+    margin-top: 1.5%;
+    
  }
 ul li{
 text-align:center;
@@ -254,7 +256,9 @@ text-align:center;
 body{
 margin-top:-25px;
  }
-
+#wrapperHeader img{
+    width:100%;
+}
 
 
 
