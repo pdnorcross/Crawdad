@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20160424205022) do
   end
 
   create_table "dependents", force: :cascade do |t|
-    t.integer  "customer",     limit: 4
+    t.integer  "customer_id",  limit: 4
     t.integer  "last_4",       limit: 4
     t.string   "fname",        limit: 255
     t.string   "lname",        limit: 255

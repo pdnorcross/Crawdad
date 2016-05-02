@@ -99,7 +99,7 @@
      <h1>New Client</h1>
    </div>
  
- <%= form_for @customer do |f| %>
+ <%= form_for @customer  do |f| %>
    <div id="wizard">
      <h2>Personal Info</h2>
      <section>
@@ -236,8 +236,7 @@
   
       </section>
   
-
- <%= fields_for :dependent do |d| %> 
+ <%= f.fields_for :dependents do |d| %> 
       <h2>Household Members</h2>
       <section>
         <h3>Household Members:</h3>
@@ -250,7 +249,7 @@
              <%= d.text_field :lname, { class: 'form-control', placeholder: 'Last Name' } %>
            </div>
            <div class="col-xs-4">
-             <%= d.text_field :food_stamps, { class: 'form-control', placeholder: 'on food stamp/DATE' } %>
+             <%= d.text_field :food_stamp, { class: 'form-control', placeholder: 'on food stamp/DATE' } %>
            </div>
            <div class="col-xs-4">
              <%= d.text_field :DOB, { class: 'form-control', placeholder: 'DOB (mm/dd/yyyy)' } %>
@@ -262,11 +261,7 @@
              
            </div>
               </fieldset>
-  
         </div><!-- end #entry1 -->
-
- 
-  
         <!-- Button (Double) -->
         <p>
          <button type="button" id="btnAdd" name="btnAdd" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>

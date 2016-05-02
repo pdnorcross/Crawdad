@@ -1,11 +1,11 @@
 class Customer < ActiveRecord::Base
 
-has_many :dependent 
-accepts_nested_attributes_for :dependent
+has_many :dependents
+accepts_nested_attributes_for :dependents
 
 before_create :validate_record
 
-def validateCustomer
+def validateCustomer  
   customer = Customer.where(
     created_at: Time.now.beginning_of_month..Time.now.end_of_month,
     address: self.address,
