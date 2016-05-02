@@ -18,32 +18,6 @@ class CustomersController < ActionController::Base
 
   def create
     @customer = Customer.new(customer_params)
-<<<<<<< HEAD
-  #@customer.validateCustomer(customer)  
-
-# @customer = Customer.new(params[:customer])
-  
-  
-  # if @customer.validateCustomer 
-  #   render action: "new"
-  #   flash[:error] = "Unable to add customer"
-  #   #redirect_to root_path, notice: 'Your customer is being processed.'
-  # else
-  #   #@customer = @customer.save
-  #   # render action: "customers/show"
-  #   flash[:success] = "Customer has successfully been added"
-  #   render action: "show"
-  #   #redirect_to @customer
-  # end
-
-
-
-=======
-    
-
->>>>>>> f02aed02635f84d285d059d3da6aea16727d3193
-  #  @customer.save
-  #    redirect_to @customer
 
       if @customer.save
         flash[:success] = "Customer has successfully been added"
