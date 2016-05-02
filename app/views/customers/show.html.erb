@@ -237,7 +237,7 @@
 
     </section>
 
-<%= fields_for :dependents do |d| %> 
+<%= f.fields_for :dependents do |d| %> 
     <h2>Household Members</h2>
     <section>
       <h3>Household Members:</h3>
@@ -250,7 +250,7 @@
             <%= d.text_field :lname, { class: 'form-control', placeholder: 'Last Name' } %>
           </div>
           <div class="col-xs-4">
-            <%= d.text_field :food_stamps, { class: 'form-control', placeholder: 'on food stamp/DATE' } %>
+            <%= d.text_field :food_stamp, { class: 'form-control', placeholder: 'on food stamp/DATE' } %>
           </div>
           <div class="col-xs-4">
             <%= d.text_field :DOB, { class: 'form-control', placeholder: 'DOB (mm/dd/yyyy)' } %>
