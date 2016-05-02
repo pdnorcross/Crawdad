@@ -18,6 +18,7 @@ class CustomersController < ActionController::Base
 
   def create
     @customer = Customer.new(customer_params)
+<<<<<<< HEAD
   #@customer.validateCustomer(customer)  
 
 # @customer = Customer.new(params[:customer])
@@ -37,6 +38,10 @@ class CustomersController < ActionController::Base
 
 
 
+=======
+    
+
+>>>>>>> f02aed02635f84d285d059d3da6aea16727d3193
   #  @customer.save
   #    redirect_to @customer
 
