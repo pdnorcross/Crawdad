@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424205022) do
+ActiveRecord::Schema.define(version: 20160502171138) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "last_4",        limit: 255
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160424205022) do
     t.float    "child_support", limit: 24
     t.string   "food_stamps",   limit: 255
     t.float    "WIC",           limit: 24
-    t.boolean  "unemployment"
+    t.float    "unemployment",  limit: 24
     t.float    "social",        limit: 24
     t.float    "ssi",           limit: 24
     t.string   "SSI_note",      limit: 255
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160424205022) do
     t.float    "total_exp",     limit: 24
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "zip_spouse",    limit: 255
   end
 
   create_table "dependents", force: :cascade do |t|
@@ -90,6 +91,22 @@ ActiveRecord::Schema.define(version: 20160424205022) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "reports", force: :cascade do |t|
+    t.integer  "total_recipients", limit: 4
+    t.integer  "new_clients",      limit: 4
+    t.integer  "total_seniors",    limit: 4
+    t.integer  "total_adults",     limit: 4
+    t.integer  "total_children",   limit: 4
+    t.integer  "total_families",   limit: 4
+    t.integer  "four",             limit: 4
+    t.integer  "five",             limit: 4
+    t.integer  "unemployed",       limit: 4
+    t.integer  "volunteers",       limit: 4
+    t.integer  "vol_hours",        limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
   create_table "sign_offs", force: :cascade do |t|
     t.integer  "last_4",     limit: 4
     t.string   "ifname",     limit: 255
@@ -115,8 +132,10 @@ ActiveRecord::Schema.define(version: 20160424205022) do
     t.integer  "hours_rounded", limit: 4,                  default: 0
     t.integer  "hours_month",   limit: 4,                  default: 0
     t.date     "last_login"
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+    t.boolean  "login_status",                             default: true
+    t.boolean  "signed_in"
   end
 
 end
