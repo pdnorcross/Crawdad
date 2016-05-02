@@ -103,22 +103,22 @@
   </div>
 
   <table class="table table-striped">
-
+  <% @reports.each do |report| %>
     <tr>
       <th>Month/Year:</th>
-      <td>mm/yy</td>
+      <td>uhhhhh</td>
     </tr>
     <tr>
       <th>Total Receipients:</th>
-      <td>#</td>
+      <td><%= report.total_recipients %></td>
     </tr>
     <tr>
       <th>Total New Clients:</th>
-      <td>#</td>
+      <td><%= report.new_clients %> </td>
     </tr>
     <tr>
       <th>Total Seniors:</th>
-      <td>#</td>
+      <td><%= report.total_seniors %> </td>
     </tr>
     <tr>
       <th>Total New Seniors:</th>
@@ -126,7 +126,7 @@
     </tr>
     <tr>
       <th>Total Adults:</th>
-      <td>#</td>
+      <td><%= report.total_adults %></td>
     </tr>
     <tr>
       <th>Total New Adults:</th>
@@ -134,7 +134,7 @@
     </tr>
     <tr>
       <th>Total Children:</th>
-      <td>#</td>
+      <td><%=report.total_children %></td>
     </tr>
     <tr>
       <th>Total New Children:</th>
@@ -142,7 +142,7 @@
     </tr>
     <tr>
       <th>Total Families:</th>
-      <td>#</td>
+      <td><%=report.total_families %></td>
     </tr>
     <tr>
       <th>Families 1-4:</th>
@@ -158,7 +158,7 @@
     </tr>
     <tr>
       <th>Total Unemployed:</th>
-      <td>#</td>
+      <td><%= report.unemployed%></td>
     </tr>
     <tr>
       <th>Total New Unemployed:</th>
@@ -166,8 +166,9 @@
     </tr>
     <tr>
       <th>Total Volunteer Hours:</th>
-      <td>#</td>
+      <td><%=report.vol_hours %></td>
     </tr>
+        <% end %>
 
   </table>
 
