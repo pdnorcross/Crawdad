@@ -39,12 +39,23 @@ $(function () {
         To make more, you can copy the one for form elements and simply update the classes for its label and input.
         Keep in mind that the .val() method is what clears the element when it gets cloned. Radio and checkboxes need .val([]) instead of .val('').
     */
-        // H2 - section
-        newElem.find('.heading-reference').attr('id', 'ID' + newNum + '_reference').attr('name', 'ID' + newNum + '_reference').html('Entry #' + newNum);
 
-        // Title - select
-        newElem.find('.label_ttl').attr('for', 'ID' + newNum + '_title');
-        newElem.find('.select_ttl').attr('id', 'ID' + newNum + '_title').attr('name', 'ID' + newNum + '_title').val('');
+    newElem.find('input').each(function() {
+      var $this = $(this),
+          id = $this.attr('id'),
+          name = $this.attr('name');
+
+      // clear the value
+      $this.val();
+
+      // change the id
+      $this.attr('id', id.replace(/_\d+_/, '_'+num+'_'));
+
+      // change the name
+      $this.attr('name', name.replace(/\[\d+\]/, '['+num+']'));
+    });
+
+
 
         // First name - text
         newElem.find('.label_fn').attr('for', 'ID' + newNum + '_first_name');
