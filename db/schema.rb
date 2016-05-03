@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502171138) do
+ActiveRecord::Schema.define(version: 20160502220729) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "last_4",        limit: 255
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20160502171138) do
     t.string   "relationship", limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "customer_id",  limit: 4
   end
 
   create_table "donors", force: :cascade do |t|
