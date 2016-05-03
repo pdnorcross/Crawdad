@@ -34,7 +34,7 @@ class VolunteersController < ApplicationController
             login_status: false,
             hours: calculated_hours )
       end
-  end
+    end
     volunteers.save!
     redirect_to :back
   end
