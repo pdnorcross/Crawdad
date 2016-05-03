@@ -98,11 +98,13 @@
 
   <div class="container marketing">
 
+    <%= render partial: 'flash_messages' %>
+
     <div class="page-header">
       <h1>New Client</h1>
     </div>
 
-    <%= form_for @customer do |f| %>
+    <%= form_for @customer  do |f| %>
         <div id="wizard">
           <h2>Personal Info</h2>
           <section>
@@ -239,6 +241,40 @@
 
           </section>
 
+          <%= f.fields_for :dependents do |d| %>
+              <h2>Household Members</h2>
+              <section>
+                <h3>Household Members:</h3>
+                <div id="entry1" class="clonedInput">
+                  <fieldset>
+                    <div class="col-xs-4">
+                      <%= d.text_field :fname, { class: 'form-control', placeholder: 'First Name' } %>
+                    </div>
+                    <div class="col-xs-4">
+                      <%= d.text_field :lname, { class: 'form-control', placeholder: 'Last Name' } %>
+                    </div>
+                    <div class="col-xs-4">
+                      <%= d.text_field :food_stamp, { class: 'form-control', placeholder: 'on food stamp/DATE' } %>
+                    </div>
+                    <div class="col-xs-4">
+                      <%= d.text_field :DOB, { class: 'form-control', placeholder: 'DOB (mm/dd/yyyy)' } %>
+                    </div>
+                    <div class="col-xs-4">
+                      <%= d.text_field :age, { class: 'form-control', placeholder: 'Age' } %>
+                    </div>
+                    <div class="col-xs-4">
+
+                    </div>
+                  </fieldset>
+                </div><!-- end #entry1 -->
+                <!-- Button (Double) -->
+                <p>
+                  <button type="button" id="btnAdd" name="btnAdd" class="btn btn-info"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></button>
+                  <button type="button" id="btnDel" name="btnDel" class="btn btn-danger"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span></button>
+                </p>
+                </fieldset>
+              </section>
+          <% end %>
 
           <h2>Monthly Income</h2>
           <section>
@@ -373,9 +409,8 @@
           </section>
         </div>
         <%= f.submit class: 'submitButton' %>
-
+        </div><!-- /.container -->
     <% end %>
-  </div>
   <!--footer-->
   <footer>
     <p class="pull-right"><a href="#">Back to top</a></p>
