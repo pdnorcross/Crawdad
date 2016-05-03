@@ -4,42 +4,36 @@ class CustomersController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    if params[:search]
-      @customers = Customer.search(params[:search])
-    end
+    @customer = Customer.all
   end
 
   def new
-    @customer = Customer.new
+    @customer = Customer.new 
+    @dependents = @customer.dependents.build(params[:id])
   end
 
   def show
     @customer = Customer.find(params[:id])
   end
 
-  def edit
-    @customer = Customer.find(params[:id])
-  end
-
   def create
-    @customers = Customer.new(customer_params)
-    @customers.save
-    redirect_to @customers
+    @customer = Customer.new(customer_params)
+
+      if @customer.save
+        flash[:success] = "Customer has successfully been added"
+        redirect_to @customer
+      else
+        flash[:error] = "Unable to add customer"
+      end
   end
 
-  def update
-    @customers = Customer.find(params[:id])
-    if @customers.update(customer_params)
-      redirect_to @customers
-    else
-      render 'show'
-    end
+  def search
+    @customers = Customer.search(params[:search])
   end
 
-   private
+  private
   def customer_params
     params.require(:customer).permit!
   end
-
 
 end
