@@ -14,13 +14,15 @@ class VolunteersController < ApplicationController
 
   def request_sign_in
     volunteers = Volunteer.find_by(name: params[:name])
-    calculated_hours = 10
+    calculated_hours = ((Math.sqrt((volunteers.updated_at - DateTime.now)**2) / 1.hour) + volunteers.hours)
 
     if volunteers.nil?
       volunteers = Volunteer.create(
           name: params[:name],
           last_login: DateTime.now,
-          login_status: true )
+          login_status: true,
+          hours: 0
+      )
     else
       if volunteers.login_status == false
         volunteers.update(
