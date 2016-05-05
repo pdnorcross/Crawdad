@@ -14,7 +14,7 @@ class VolunteersController < ApplicationController
 
   def request_sign_in
     volunteers = Volunteer.find_by(name: params[:name])
-    calculated_hours = ((Math.sqrt((volunteers.updated_at - DateTime.now)**2) / 1.hour) + volunteers.hours)
+
 
     if volunteers.nil?
       volunteers = Volunteer.create(
@@ -29,6 +29,7 @@ class VolunteersController < ApplicationController
             login_status: true,
             last_login: DateTime.now )
       else
+        calculated_hours = ((Math.sqrt((volunteers.updated_at - DateTime.now)**2) / 1.hour) + volunteers.hours)
         # calculated_hours = current_hours(volunteer_value['name'])
         volunteers.update(
             login_status: false,
