@@ -23,7 +23,7 @@ class ReportsController < ApplicationController
                       dependents.created_at <= '#{reports_value['date 2']}') ((dependents.updated_at >= '#{reports_value['date 1']}' AND
                       dependents.updated_at <= '#{reports_value['date 2']})")
 
-    volunteers = Dependent.where("volunteers.last_login >= '#{reports_value['date 1']}' AND
+    volunteers = Volunteer.where("volunteers.last_login >= '#{reports_value['date 1']}' AND
                       (volunteers.last_login <= '#{reports_value['date 2']}' ")
 
     volunteers.each do
