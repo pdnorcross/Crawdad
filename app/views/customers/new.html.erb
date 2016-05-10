@@ -168,8 +168,8 @@
            <h3 class="h3Form">Job Status:</h3>
            <div class="checkbox">
              <label>
-               <%= f.check_box_tag :occupation, "unemployed" %>
-               <%= f.label :occupation, "Unemployed", :value => "unemployed" %>
+               <%= f.check_box_tag :got_a_job, "unemployed" %>
+               <%= f.label :got_a_job, "Unemployed", :value => "unemployed" %>
              </label>
            </div>
            <div class="col-xs-6">
@@ -184,32 +184,32 @@
 
            <label class="radio-inline">
 
-             <%= f.radio_button :other_inc, "single" %>
-             <%= f.label :other_inc, "Single", :value => "single" %>
+             <%= f.radio_button :marriage, "single" %>
+             <%= f.label :marriage, "Single", :value => "single" %>
 
            </label>
            <label class="radio-inline">
 
-             <%= f.radio_button :other_inc, "married" %>
-             <%= f.label :other_inc, "Married", :value => "married" %>
+             <%= f.radio_button :marriage, "married" %>
+             <%= f.label :marriage, "Married", :value => "married" %>
 
            </label>
            <label class="radio-inline">
 
-             <%= f.radio_button :other_inc, "divorced" %>
-             <%= f.label :other_inc, "Divorced", :value => "divorced" %>
+             <%= f.radio_button :marriage, "divorced" %>
+             <%= f.label :marriage, "Divorced", :value => "divorced" %>
 
            </label>
            <label class="radio-inline">
 
-             <%= f.radio_button :other_inc, "widowed" %>
-             <%= f.label :other_inc, "Widowed", :value => "widowed" %>
+             <%= f.radio_button :marriage, "widowed" %>
+             <%= f.label :marriage, "Widowed", :value => "widowed" %>
 
            </label>
            <label class="radio-inline">
 
-             <%= f.radio_button :other_inc, "separated" %>
-             <%= f.label :other_inc, "Separated", :value => "separated" %>
+             <%= f.radio_button :marriage, "separated" %>
+             <%= f.label :marriage, "Separated", :value => "separated" %>
 
            </label>
            <div class="col-xs-6">
@@ -219,19 +219,19 @@
              <input type="text" class="form-control" placeholder="ID">
            </div>
            <div class="col-xs-6">
-             <%= f.text_field :DOB, { class: 'form-control', placeholder: 'Date of Birth' } %>
+             <%= f.text_field :spouse_DOB, { class: 'form-control', placeholder: 'Date of Birth' } %>
            </div>
            <div class="col-xs-6">
-             <%= f.text_field :age, { class: 'form-control', placeholder: 'Age' } %>
+             <%= f.text_field :spouse_age, { class: 'form-control', placeholder: 'Age' } %>
            </div>
            <div class="col-xs-6">
-             <%= f.text_field :employer, { class: 'form-control', placeholder: 'Place of Employment' } %>
+             <%= f.text_field :spouse_employer, { class: 'form-control', placeholder: 'Place of Employment' } %>
            </div>
            <div class="col-xs-6">
-             <%= f.text_field :occupation, { class: 'form-control', placeholder: 'Occupation' } %>
+             <%= f.text_field :spouse_occupation, { class: 'form-control', placeholder: 'Occupation' } %>
            </div>
            <div class="col-xs-6">
-             <%= f.text_field :zip, { class: 'form-control', placeholder: 'Zip' } %>
+             <%= f.text_field :zip_spouse, { class: 'form-control', placeholder: 'Zip' } %>
            </div>
 
          </section>
@@ -332,7 +332,7 @@
            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
            <div class="input-group">
              <div class="input-group-addon">$</div>
-             <%= f.text_field :other_note, { class: 'form-control', placeholder: 'Other' } %>
+             <%= f.text_field :other_income, { class: 'form-control', placeholder: 'Other' } %>
              <div class="input-group-addon">.00</div>
            </div>
          </section>
