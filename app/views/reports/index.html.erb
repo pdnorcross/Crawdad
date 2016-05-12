@@ -91,6 +91,206 @@
       <li><a href="#">mm/yy</a></li>
       <li><a href="#">mm/yy</a></li>
     </ul>
+    <!doctype html>
+    <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+    <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+    <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Helping Hand of Greater Little Rock</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <style>
+      body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+      }
+    </style>
+    <link rel="stylesheet" href="../assets/bootstrap-theme.min.css">
+    <!-- Custom styles for this template -->
+
+    <link rel="stylesheet" href="../assets/normalize.css">
+    <link rel="stylesheet" href="../assets/datepicker.css">
+    <link rel="stylesheet" href="../assets/main.css">
+
+  </head>
+  <!--[if lt IE 8]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- NAVBAR
+  ================================================== -->
+  <body>
+  <div class="navbar-wrapper">
+    <div class="container">
+
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Helping Hand of Greater Little Rock</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/home/#">Home</a></li>
+              <li><a href="/customers/#">Search Existing Clients</a></li>
+              <li><a href="/customers/new">New Clients</a></li>
+              <li><a href="/volunteers/#">Volunteer Clocking</a><li>
+              <li class="active"><a href="/reports/#">Monthly Reports</a><li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+              </div>
+              <button type="signOut" class="btn btn-default">Sign Out</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+
+  <div class="container marketing">
+    <div class="page-header">
+      <h1>Select Month</h1>
+    </div>
+
+
+    <!-- Single button -->
+    <div class="col-xs-4">
+      <input type="text" class="form-control example1" name="start" placeholder="Start date">
+    </div>
+    <div class="col-xs-4">
+      <span class="input-group-addon">to</span>
+    </div>
+    <div class="col-xs-4">
+      <input type="text" class="form-control example1" name="end" placeholder="End date">
+    </div>
+
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-info buttonWidth">
+        View Report
+      </button>
+    </div>
+    <div class="col-xs-12">
+      <button type="button" class="btn btn-info buttonWidth">
+        View Volunteer Report
+      </button>
+    </div>
+
+
+
+
+    <div class="page-header" id="adjust">
+      <h1><small>Dashboard</small></h1>
+    </div>
+
+    <table class="table table-striped">
+      <% @reports.each do |report| %>
+          <tr>
+            <th>Month/Year:</th>
+            <td>uhhhhh</td>
+          </tr>
+          <tr>
+            <th>Total Receipients:</th>
+            <td><%= report.total_recipients %></td>
+          </tr>
+          <tr>
+            <th>Total New Clients:</th>
+            <td><%= report.new_clients %> </td>
+          </tr>
+          <tr>
+            <th>Total Seniors:</th>
+            <td><%= report.total_seniors %> </td>
+          </tr>
+          <tr>
+            <th>Total New Seniors:</th>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th>Total Adults:</th>
+            <td><%= report.total_adults %></td>
+          </tr>
+          <tr>
+            <th>Total New Adults:</th>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th>Total Children:</th>
+            <td><%=report.total_children %></td>
+          </tr>
+          <tr>
+            <th>Total New Children:</th>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th>Total Families:</th>
+            <td><%=report.total_families %></td>
+          </tr>
+          <tr>
+            <th>Families 1-4:</th>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th>Families 5+:</th>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th>New Families:</th>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th>Total Unemployed:</th>
+            <td><%= report.unemployed%></td>
+          </tr>
+          <tr>
+            <th>Total New Unemployed:</th>
+            <td>#</td>
+          </tr>
+          <tr>
+            <th>Total Volunteer Hours:</th>
+            <td><%=report.vol_hours %></td>
+          </tr>
+      <% end %>
+
+    </table>
+
+
+
+    <!--footer-->
+    <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2016 AllStateTeam. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+  </div><!-- /.container -->
+
+  <script src="../assets/vendor/bootstrap.min.js"></script>
+  <script src="../assets/jquery-1.9.1.min.js"></script>
+  <script src="../assets/bootstrap-datepicker.js"></script>
+  <script type="text/javascript">
+    // When the document is ready
+    $(document).ready(function () {
+
+      $('.example1').datepicker({
+        format: "mm/dd/yyyy"
+      });
+
+    });
+  </script>
+
+  </body>
+  </html>
+
   </div>
 
 
