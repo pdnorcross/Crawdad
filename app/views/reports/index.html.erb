@@ -67,6 +67,7 @@
   </div>
 </div>
 
+<%= form_tag({:controler => 'reports', :action=> 'generate_reports'}, method: :post) do %>
 <div class="container marketing">
   <div class="page-header">
     <h1>Select Month</h1>
@@ -75,25 +76,25 @@
 
   <!-- Single button -->
   <div class="col-xs-4">
-    <input type="text" class="form-control example1" name="start" placeholder="Start date">
+    <%= text_field_tag :date1, params[:date1], {class: 'form-control example1'} %>
   </div>
   <div class="col-xs-4">
     <span class="input-group-addon">to</span>
   </div>
   <div class="col-xs-4">
-    <input type="text" class="form-control example1" name="end" placeholder="End date">
+    <%= text_field_tag :date2, params[:date2], {class: 'form-control example1'} %>
   </div>
 
   <div class="col-xs-12">
-    <button type="button" class="btn btn-info buttonWidth">
-      View Report
-    </button>
+    <%= submit_tag 'View Report', :class => 'btn btn-info buttonWidth'%>
   </div>
   <div class="col-xs-12">
     <button type="button" class="btn btn-info buttonWidth">
       View Volunteer Report
     </button>
   </div>
+
+  <%end%>
 
 
 

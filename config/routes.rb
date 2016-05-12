@@ -2,7 +2,11 @@ Rails.application.routes.draw do
    root 'home#index'
   resources :home
   resources :customers
-  resources :reports
+  resources :reports do
+    collection do
+      post :generate_reports
+    end
+  end
   resources :volunteers
 
 
