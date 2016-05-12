@@ -31,7 +31,7 @@ class ReportsController < ApplicationController
     end
 
 
-    @reports = Report.update(
+    @reports = Report.find_by(id: 1).update(
         total_recipients: (count(customers.all) + count(dependents.all)),
         new_clients: count(customers.where('created_at >= ?', reports_value['date 1']).and.where('created_at <= ?', reports_value['date 2'])),
         total_seniors: count(customers.where('age > ?', 64)) + count(dependents.where('age > ?', 64)),
