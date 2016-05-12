@@ -39,6 +39,7 @@ class VolunteersController < ApplicationController
     end
     volunteers.save!
     redirect_to :back
+
   end
 
 
